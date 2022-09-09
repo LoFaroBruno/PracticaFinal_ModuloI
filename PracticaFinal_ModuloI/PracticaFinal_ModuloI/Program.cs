@@ -12,7 +12,7 @@ namespace PracticaFinal_ModuloI
             {
                 (string inputFilePath, string outputFilePath) = Utils.Utils.ParseArguments();
                 Utils.Utils.ValidarArchivos(outputFilePath, inputFilePath);
-                List<Transferencia> transferencias = Utils.Utils.LeerTransferencias();
+                List<Transferencia> transferencias = Utils.Utils.LeerTransferencias(inputFilePath);
                 Utils.Utils.CompletarTransferencias(transferencias);
                 Utils.Utils.EscribirTransferencias(outputFilePath);
             }
