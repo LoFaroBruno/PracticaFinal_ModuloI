@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using BusinessModel.Modelos;
 
@@ -11,11 +12,14 @@ namespace PracticaFinal_ModuloI.Utils
         public const int STATUS_ERR = 2;
         public static (string, string) ParseArguments()
         {
-            return ($"C:/Users/d78650/Desktop/transferencias.txt", $"C:/Users/d78650/Desktop/transferencias_completo.txt");
+            return ($"C:/Users/d78650/Desktop/transferencias.txt", $"C:/Users/d78650/Desktop/transferencias_completas.txt");
         }
         public static void ValidarArchivos(string file1, string file2)
         {
-            ;
+            if (!File.Exists(file1))
+                throw new ArgumentException($"El Archivo {file1} no existe.");
+            if (!File.Exists(file2))
+                throw new ArgumentException($"El Archivo {file2} no existe.");
         }
         public static async void CompletarTransferencias(List<Transferencia> transferencias)
         {

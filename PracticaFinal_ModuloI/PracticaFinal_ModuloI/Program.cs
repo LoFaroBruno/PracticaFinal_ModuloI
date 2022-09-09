@@ -19,6 +19,7 @@ namespace PracticaFinal_ModuloI
             catch(Exception ex)
             {
                 Console.WriteLine(ex);
+                Console.ReadKey();
                 return Utils.Utils.STATUS_ERR;
             }
             Console.ReadKey();
