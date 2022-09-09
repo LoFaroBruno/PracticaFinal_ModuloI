@@ -1,19 +1,20 @@
 ﻿using BusinessModel.Modelos;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace PracticaFinal_ModuloI
 {
     internal class Program
     {
-        static int Main(string[] args)
+        static async Task<int> Main(string[] args)
         {
             try
             {
                 (string inputFilePath, string outputFilePath) = Utils.Utils.ParseArguments(args);
                 Utils.Utils.ValidarArchivos(inputFilePath, outputFilePath);
                 List<Transferencia> transferencias = Utils.Utils.LeerTransferencias(inputFilePath);
-                Utils.Utils.CompletarTransferencias(transferencias);
+                transferencias = await Utils.Utils.CompletarTransferencias(transferencias);
                 Utils.Utils.EscribirTransferencias(outputFilePath);
             }
             catch(Exception ex)

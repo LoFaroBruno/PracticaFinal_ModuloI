@@ -10,12 +10,14 @@ namespace PracticaFinal_ModuloI.Utils
     {
         public const int STATUS_OK = 0;
         public const int STATUS_ERR = 2;
+
         public static (string, string) ParseArguments(string[] args)
         {
             if (args.Length != 2)
                 throw new ArgumentException("Se requieren dos parametros.");
             return (args[0], args[1]);
         }
+
         public static void ValidarArchivos(string file1, string file2)
         {
             if (!File.Exists(file1))
@@ -23,13 +25,16 @@ namespace PracticaFinal_ModuloI.Utils
             if (!File.Exists(file2))
                 throw new ArgumentException($"El Archivo {file2} no existe.");
         }
-        public static async void CompletarTransferencias(List<Transferencia> transferencias)
+
+        public static async Task<List<Transferencia>> CompletarTransferencias(List<Transferencia> transferencias)
         {
             foreach (Transferencia transferencia in transferencias)
             {
-                transferencia.ClaveTributaria = await GetClaveTributaria(transferencia.ClaveTributaria);
+                transferencia.ClaveTributaria = await GetClaveCodigoDeActividad(transferencia.ClaveTributaria);
             }
+            return transferencias;
         }
+
         public static List<Transferencia> LeerTransferencias(string inputFilePath)
         {
             int linea = 0;
@@ -59,7 +64,6 @@ namespace PracticaFinal_ModuloI.Utils
             Transferencia transferencia = new Transferencia();
             try
             {
-                int posicion = 0;
                 transferencia.Nombre = entrada.Substring(0, 31);
                 int length = transferencia.Nombre.Length;
                 transferencia.Monto = float.Parse(entrada.Substring(31, 10));
@@ -86,10 +90,10 @@ namespace PracticaFinal_ModuloI.Utils
         {
             ;
         }
-        internal static async Task<string> GetClaveTributaria(string CUIL)
+        internal static async Task<string> GetClaveCodigoDeActividad(string CUIL)
         {
             await Task.Run(() => System.Threading.Thread.Sleep(1000));
-            return "27432258201";
+            return "001322";
         }
     }
 }
