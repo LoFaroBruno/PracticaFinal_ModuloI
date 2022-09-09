@@ -15,7 +15,7 @@ namespace PracticaFinal_ModuloI
                 Utils.Utils.ValidarArchivos(inputFilePath, outputFilePath);
                 List<Transferencia> transferencias = Utils.Utils.LeerTransferencias(inputFilePath);
                 transferencias = await Utils.Utils.CompletarTransferencias(transferencias);
-                Utils.Utils.EscribirTransferencias(outputFilePath);
+                Utils.Utils.EscribirTransferencias(transferencias, outputFilePath);
             }
             catch(Exception ex)
             {

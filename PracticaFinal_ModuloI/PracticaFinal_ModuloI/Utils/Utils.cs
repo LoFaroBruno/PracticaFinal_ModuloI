@@ -30,7 +30,7 @@ namespace PracticaFinal_ModuloI.Utils
         {
             foreach (Transferencia transferencia in transferencias)
             {
-                transferencia.ClaveTributaria = await GetClaveCodigoDeActividad(transferencia.ClaveTributaria);
+                transferencia.CodigoActividadAFIP = await GetClaveCodigoDeActividad(transferencia.ClaveTributaria);
             }
             return transferencias;
         }
@@ -86,9 +86,38 @@ namespace PracticaFinal_ModuloI.Utils
             }
             return transferencia;
         }
-        public static void EscribirTransferencias(string outputFilePath)
+        public static string TransferenciaParseString(Transferencia transferencia)
         {
-            ;
+            string linea = "";
+            linea += transferencia.Nombre.ToString().PadLeft(31,'0');
+            linea += transferencia.Monto.ToString().PadLeft(10, '0');
+            linea += transferencia.HoraFecha.ToString(@"yyyyMMddHHmmss");
+            if(transferencia.Inmediata)
+                linea += 'T';//31,10,14,1,1,22,22,6,11
+            else
+                linea += 'F';
+            linea += transferencia.CBUOrigen;
+            linea += transferencia.CBUDestino;
+            linea += transferencia.CodigoActividadAFIP;
+            linea += transferencia.ClaveTributaria;
+            return linea;
+        }
+        public static async void EscribirTransferencias(List<Transferencia> transferencias, string outputFilePath)
+        {
+            try
+            {
+                using (StreamWriter writer = File.CreateText("C:/Users/D78650/Desktop/transferencias_completas.txt"))
+                {
+                    foreach (Transferencia tr in transferencias)
+                    {
+                        await writer.WriteLineAsync(TransferenciaParseString(tr));
+                    }
+                }
+            }
+            catch (Exception Ex)
+            {
+                throw new Exception("error al leer el archivo", Ex);
+            }
         }
         internal static async Task<string> GetClaveCodigoDeActividad(string CUIL)
         {
