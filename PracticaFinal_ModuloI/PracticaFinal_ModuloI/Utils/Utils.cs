@@ -10,9 +10,11 @@ namespace PracticaFinal_ModuloI.Utils
     {
         public const int STATUS_OK = 0;
         public const int STATUS_ERR = 2;
-        public static (string, string) ParseArguments()
+        public static (string, string) ParseArguments(string[] args)
         {
-            return ($"C:/Users/d78650/Desktop/transferencias.txt", $"C:/Users/d78650/Desktop/transferencias_completas.txt");
+            if (args.Length != 2)
+                throw new ArgumentException("Se requieren dos parametros.");
+            return (args[0], args[1]);
         }
         public static void ValidarArchivos(string file1, string file2)
         {
