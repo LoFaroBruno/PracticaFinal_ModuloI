@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompletadorDeTransferencias
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessModel", "BusinessModel\BusinessModel.csproj", "{9DD96A2F-D7CD-4B6A-8C2D-6917AD62CE01}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AFIPPersonasWebApp", "AFIPPersonasWebApp\AFIPPersonasWebApp.csproj", "{F15E610F-4046-49D9-9B6D-5FCF8680E921}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9DD96A2F-D7CD-4B6A-8C2D-6917AD62CE01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DD96A2F-D7CD-4B6A-8C2D-6917AD62CE01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DD96A2F-D7CD-4B6A-8C2D-6917AD62CE01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F15E610F-4046-49D9-9B6D-5FCF8680E921}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F15E610F-4046-49D9-9B6D-5FCF8680E921}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F15E610F-4046-49D9-9B6D-5FCF8680E921}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F15E610F-4046-49D9-9B6D-5FCF8680E921}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
