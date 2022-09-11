@@ -38,6 +38,49 @@
                         Codigo = 001100
                     }
                     );
+                context.Personas.AddOrUpdate(c => c.ID,
+                    new Models.Persona()
+                    {
+                        ID=1,
+                        CodActividadId=1,
+                        ClaveTributaria= "20292666557",
+                    },
+                    new Models.Persona()
+                    {
+                        ID = 2,
+                        CodActividadId = 1,
+                        ClaveTributaria = "27302353876",
+                    },
+                    new Models.Persona()
+                    {
+                        ID = 3,
+                        CodActividadId = 2,
+                        ClaveTributaria = "20005344565",
+                    },
+                    new Models.Persona()
+                    {
+                        ID = 4,
+                        CodActividadId = 2,
+                        ClaveTributaria = "20276378751",
+                    },
+                    new Models.Persona()
+                    {
+                        ID = 5,
+                        CodActividadId = 1,
+                        ClaveTributaria = "27303224561",
+                    },
+                    new Models.Persona()
+                    {
+                        ID = 6,
+                        CodActividadId = 1,
+                        ClaveTributaria = "20294366764",
+                    },
+                    new Models.Persona()
+                    {
+                        ID = 7,
+                        CodActividadId = 3,
+                        ClaveTributaria = "20142398258",
+                    });
             }
             catch (Exception Ex)
             {

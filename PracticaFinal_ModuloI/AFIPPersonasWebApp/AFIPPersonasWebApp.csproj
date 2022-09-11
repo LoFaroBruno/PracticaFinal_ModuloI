@@ -129,6 +129,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CodActividadsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PersonasController.cs" />
     <Compile Include="Data\AFIPPersonasWebAppContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -140,6 +141,10 @@
     <Compile Include="Migrations\202209111959172_ChangeCodigoToInt.cs" />
     <Compile Include="Migrations\202209111959172_ChangeCodigoToInt.designer.cs">
       <DependentUpon>202209111959172_ChangeCodigoToInt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209112023330_AddPersonaDbContext.cs" />
+    <Compile Include="Migrations\202209112023330_AddPersonaDbContext.designer.cs">
+      <DependentUpon>202209112023330_AddPersonaDbContext.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CodActividad.cs" />
@@ -187,6 +192,11 @@
     <Content Include="Views\CodActividads\Details.cshtml" />
     <Content Include="Views\CodActividads\Edit.cshtml" />
     <Content Include="Views\CodActividads\Index.cshtml" />
+    <Content Include="Views\Personas\Create.cshtml" />
+    <Content Include="Views\Personas\Delete.cshtml" />
+    <Content Include="Views\Personas\Details.cshtml" />
+    <Content Include="Views\Personas\Edit.cshtml" />
+    <Content Include="Views\Personas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -210,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202209111959172_ChangeCodigoToInt.resx">
       <DependentUpon>202209111959172_ChangeCodigoToInt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209112023330_AddPersonaDbContext.resx">
+      <DependentUpon>202209112023330_AddPersonaDbContext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

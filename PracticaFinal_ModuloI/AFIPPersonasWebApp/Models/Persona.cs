@@ -13,7 +13,7 @@ namespace AFIPPersonasWebApp.Models
         public int CodActividadId { get; set; }
         [ForeignKey("CodActividadId")]
         public CodActividad CodActividad { get; set; }
-        [Required, Range(1111111111, 9999999999)]
+        [Required, Range(11111111111, 99999999999)]
         public string ClaveTributaria { get; set; }
     }
 }
