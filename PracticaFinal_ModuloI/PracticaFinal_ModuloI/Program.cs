@@ -23,6 +23,7 @@ namespace PracticaFinal_ModuloI
                 Console.ReadKey();
                 return Utils.Utils.STATUS_ERR;
             }
+            Console.WriteLine("Ready");
             Console.ReadKey();
             return Utils.Utils.STATUS_OK;
         }

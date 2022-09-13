@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using BusinessModel.Modelos;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace PracticaFinal_ModuloI.Utils
 {
@@ -30,7 +32,8 @@ namespace PracticaFinal_ModuloI.Utils
         {
             foreach (Transferencia transferencia in transferencias)
             {
-                transferencia.CodigoActividadAFIP = await GetClaveCodigoDeActividad(transferencia.ClaveTributaria);
+                string codActividad = await GetClaveCodigoDeActividad(transferencia.ClaveTributaria);
+                transferencia.CodigoActividadAFIP = codActividad.PadLeft(6, '0');
             }
             return transferencias;
         }
@@ -106,7 +109,7 @@ namespace PracticaFinal_ModuloI.Utils
         {
             try
             {
-                using (StreamWriter writer = File.CreateText("C:/Users/D78650/Desktop/transferencias_completas.txt"))
+                using (StreamWriter writer = File.CreateText("C:/Users/vivil/OneDrive/Escritorio/salida.txt"))
                 {
                     foreach (Transferencia tr in transferencias)
                     {
@@ -121,8 +124,15 @@ namespace PracticaFinal_ModuloI.Utils
         }
         internal static async Task<string> GetClaveCodigoDeActividad(string CUIL)
         {
-            await Task.Run(() => System.Threading.Thread.Sleep(1000));
-            return "001322";
+            HttpClient client = new HttpClient();
+            string requestUrl = $"https://localhost:44334/api/Personas1?cuil={CUIL}";
+            Persona persona = new Persona();
+            HttpResponseMessage response = await client.GetAsync(requestUrl);
+            if (response.IsSuccessStatusCode)
+            {
+                persona = await response.Content.ReadAsAsync<Persona>();
+            }
+            return persona.CodActividad.Codigo;
         }
     }
 }
