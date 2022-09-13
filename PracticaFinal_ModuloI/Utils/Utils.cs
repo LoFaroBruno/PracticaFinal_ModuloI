@@ -24,8 +24,6 @@ namespace CompletadorDeTransferencias.Utils
         {
             if (!File.Exists(file1))
                 throw new ArgumentException($"El Archivo {file1} no existe.");
-            if (!File.Exists(file2))
-                throw new ArgumentException($"El Archivo {file2} no existe.");
         }
 
         public static async Task<List<Transferencia>> CompletarTransferencias(List<Transferencia> transferencias)
