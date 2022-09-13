@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using BusinessModel.Modelos;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace PracticaFinal_ModuloI.Utils
 {
@@ -121,7 +123,26 @@ namespace PracticaFinal_ModuloI.Utils
         }
         internal static async Task<string> GetClaveCodigoDeActividad(string CUIL)
         {
-            await Task.Run(() => System.Threading.Thread.Sleep(1000));
+            string baseURL;
+            HttpClient client = new HttpClient();
+            string urlRequest = "";
+            CodActividad codActividad;
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri(urlRequest),
+            };
+            using (var response = await client.SendAsync(request).ConfigureAwait(false))
+            {
+                response.EnsureSuccessStatusCode();
+                string content = await response.Content.ReadAsStringAsync();
+                if (string.Equals(content, "{}"))
+                    throw new Exception("Invalid address.");
+                //CodActividadId, 
+                dynamic location = JsonConvert.DeserializeObject(content);
+                double.Parse(location[0]["lat"].ToString().Replace(".", ","));
+                double.Parse(location[0]["lon"].ToString().Replace(".", ","));
+            }
             return "001322";
         }
     }
