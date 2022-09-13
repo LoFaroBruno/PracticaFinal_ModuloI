@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3C9527CF-E8E8-4F41-927F-D7735FCF6CFC}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>PracticaFinal_ModuloI</RootNamespace>
-    <AssemblyName>PracticaFinal_ModuloI</AssemblyName>
+    <RootNamespace>CompletadorDeTransferencias</RootNamespace>
+    <AssemblyName>CompletadorDeTransferencias</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

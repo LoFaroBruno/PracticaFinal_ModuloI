@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace PracticaFinal_ModuloI.Utils
+namespace CompletadorDeTransferencias.Utils
 {
     public class EntradaDeArchivo
     {

@@ -6,7 +6,7 @@ using BusinessModel.Modelos;
 using System.Net.Http;
 using Newtonsoft.Json;
 
-namespace PracticaFinal_ModuloI.Utils
+namespace CompletadorDeTransferencias.Utils
 {
     public static class Utils
     {
