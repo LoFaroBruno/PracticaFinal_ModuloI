@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -35,6 +35,22 @@ namespace AFIPPersonasWebApp.Controllers
             }
 
             return Ok(persona);
+        }
+
+        // GET: api/Personas1/27324231905
+        [ResponseType(typeof(Persona))]
+        public HttpResponseMessage GetPersona(string cuil)
+        {
+            Persona persona;
+            try
+            {
+                persona = db.Personas.Include(p=>p.CodActividad).Single(p => p.ClaveTributaria == cuil);
+            }
+            catch (Exception Ex)
+            {
+                return Request.CreateResponse(System.Net.HttpStatusCode.NotFound, $"{Ex}");
+            }
+            return Request.CreateResponse(System.Net.HttpStatusCode.OK, persona);
         }
 
         // PUT: api/Personas1/5

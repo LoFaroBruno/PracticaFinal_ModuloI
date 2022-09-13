@@ -23,19 +23,19 @@
                     {
                         ID = 1,
                         Descripcion = "Docencia",
-                        Codigo = 004355
+                        Codigo = "4355"
                     },
                     new Models.CodActividad()
                     {
                         ID = 2,
                         Descripcion = "Fabricación",
-                        Codigo = 001322
+                        Codigo = "1322"
                     },
                     new Models.CodActividad()
                     {
                         ID = 3,
                         Descripcion = "Investigacion",
-                        Codigo = 001100
+                        Codigo = "1100"
                     }
                     );
                 context.Personas.AddOrUpdate(c => c.ID,

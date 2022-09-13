@@ -141,6 +141,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CodActividads1Controller.cs" />
     <Compile Include="Controllers\CodActividadsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Personas1Controller.cs" />
@@ -160,6 +161,10 @@
     <Compile Include="Migrations\202209112023330_AddPersonaDbContext.cs" />
     <Compile Include="Migrations\202209112023330_AddPersonaDbContext.designer.cs">
       <DependentUpon>202209112023330_AddPersonaDbContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209131524430_CodActividadCodigoToString.cs" />
+    <Compile Include="Migrations\202209131524430_CodActividadCodigoToString.designer.cs">
+      <DependentUpon>202209131524430_CodActividadCodigoToString.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CodActividad.cs" />
@@ -238,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202209112023330_AddPersonaDbContext.resx">
       <DependentUpon>202209112023330_AddPersonaDbContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209131524430_CodActividadCodigoToString.resx">
+      <DependentUpon>202209131524430_CodActividadCodigoToString.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

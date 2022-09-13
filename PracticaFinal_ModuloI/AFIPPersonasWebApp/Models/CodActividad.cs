@@ -12,6 +12,6 @@ namespace AFIPPersonasWebApp.Models
         [Required, MinLength(3), MaxLength(30)]
         public string Descripcion { get; set; }
         [Required, Range(000, 99999999)]
-        public int Codigo { get; set; }
+        public string Codigo { get; set; }
     }
 }
