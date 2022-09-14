@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace PracticaFinal_ModuloI
+namespace CompletadorDeTransferencias
 {
     internal class Program
     {
@@ -23,6 +23,7 @@ namespace PracticaFinal_ModuloI
                 Console.ReadKey();
                 return Utils.Utils.STATUS_ERR;
             }
+            Console.WriteLine("Ready");
             Console.ReadKey();
             return Utils.Utils.STATUS_OK;
         }

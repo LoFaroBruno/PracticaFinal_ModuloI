@@ -6,7 +6,7 @@ using BusinessModel.Modelos;
 using System.Net.Http;
 using Newtonsoft.Json;
 
-namespace PracticaFinal_ModuloI.Utils
+namespace CompletadorDeTransferencias.Utils
 {
     public static class Utils
     {
@@ -24,15 +24,14 @@ namespace PracticaFinal_ModuloI.Utils
         {
             if (!File.Exists(file1))
                 throw new ArgumentException($"El Archivo {file1} no existe.");
-            if (!File.Exists(file2))
-                throw new ArgumentException($"El Archivo {file2} no existe.");
         }
 
         public static async Task<List<Transferencia>> CompletarTransferencias(List<Transferencia> transferencias)
         {
             foreach (Transferencia transferencia in transferencias)
             {
-                transferencia.CodigoActividadAFIP = await GetClaveCodigoDeActividad(transferencia.ClaveTributaria);
+                string codActividad = await GetClaveCodigoDeActividad(transferencia.ClaveTributaria);
+                transferencia.CodigoActividadAFIP = codActividad.PadLeft(6, '0');
             }
             return transferencias;
         }
@@ -108,7 +107,7 @@ namespace PracticaFinal_ModuloI.Utils
         {
             try
             {
-                using (StreamWriter writer = File.CreateText("C:/Users/D78650/Desktop/transferencias_completas.txt"))
+                using (StreamWriter writer = File.CreateText("C:/Users/vivil/OneDrive/Escritorio/salida.txt"))
                 {
                     foreach (Transferencia tr in transferencias)
                     {
@@ -123,27 +122,15 @@ namespace PracticaFinal_ModuloI.Utils
         }
         internal static async Task<string> GetClaveCodigoDeActividad(string CUIL)
         {
-            string baseURL;
             HttpClient client = new HttpClient();
-            string urlRequest = "";
-            CodActividad codActividad;
-            var request = new HttpRequestMessage
+            string requestUrl = $"https://localhost:44334/api/Personas1?cuil={CUIL}";
+            Persona persona = new Persona();
+            HttpResponseMessage response = await client.GetAsync(requestUrl);
+            if (response.IsSuccessStatusCode)
             {
-                Method = HttpMethod.Get,
-                RequestUri = new Uri(urlRequest),
-            };
-            using (var response = await client.SendAsync(request).ConfigureAwait(false))
-            {
-                response.EnsureSuccessStatusCode();
-                string content = await response.Content.ReadAsStringAsync();
-                if (string.Equals(content, "{}"))
-                    throw new Exception("Invalid address.");
-                //CodActividadId, 
-                dynamic location = JsonConvert.DeserializeObject(content);
-                double.Parse(location[0]["lat"].ToString().Replace(".", ","));
-                double.Parse(location[0]["lon"].ToString().Replace(".", ","));
+                persona = await response.Content.ReadAsAsync<Persona>();
             }
-            return "001322";
+            return persona.CodActividad.Codigo;
         }
     }
 }

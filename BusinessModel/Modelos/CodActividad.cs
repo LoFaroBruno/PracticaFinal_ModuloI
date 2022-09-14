@@ -5,13 +5,8 @@ namespace BusinessModel.Modelos
 {
     public class CodActividad
     {
-        [Key]
-        [Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
-        [Required, MinLength(3), MaxLength(30)]
         public string Descripcion { get; set; }
-        [Required, Range(000, 99999999)]
-        public int Codigo { get; set; }
+        public string Codigo { get; set; }
     }
 }
