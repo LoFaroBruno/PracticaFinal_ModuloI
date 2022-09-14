@@ -107,7 +107,7 @@ namespace CompletadorDeTransferencias.Utils
         {
             try
             {
-                using (StreamWriter writer = File.CreateText("C:/Users/vivil/OneDrive/Escritorio/salida.txt"))
+                using (StreamWriter writer = File.CreateText(outputFilePath))
                 {
                     foreach (Transferencia tr in transferencias)
                     {
