@@ -3,14 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompletadorDeTransferencias", "PracticaFinal_ModuloI\CompletadorDeTransferencias.csproj", "{3C9527CF-E8E8-4F41-927F-D7735FCF6CFC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessModel", "BusinessModel\BusinessModel.csproj", "{9DD96A2F-D7CD-4B6A-8C2D-6917AD62CE01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AFIPPersonasWebApp", "AFIPPersonasWebApp\AFIPPersonasWebApp.csproj", "{F15E610F-4046-49D9-9B6D-5FCF8680E921}"
 	ProjectSection(ProjectDependencies) = postProject
 		{9DD96A2F-D7CD-4B6A-8C2D-6917AD62CE01} = {9DD96A2F-D7CD-4B6A-8C2D-6917AD62CE01}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessModel", "BusinessModel\BusinessModel.csproj", "{9DD96A2F-D7CD-4B6A-8C2D-6917AD62CE01}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AFIPPersonasWebApp", "AFIPPersonasWebApp\AFIPPersonasWebApp.csproj", "{F15E610F-4046-49D9-9B6D-5FCF8680E921}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompletadorDeTransferencias", "CompletadorDeTransferencias\CompletadorDeTransferencias.csproj", "{3C9527CF-E8E8-4F41-927F-D7735FCF6CFC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9DD96A2F-D7CD-4B6A-8C2D-6917AD62CE01} = {9DD96A2F-D7CD-4B6A-8C2D-6917AD62CE01}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3C9527CF-E8E8-4F41-927F-D7735FCF6CFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C9527CF-E8E8-4F41-927F-D7735FCF6CFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C9527CF-E8E8-4F41-927F-D7735FCF6CFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C9527CF-E8E8-4F41-927F-D7735FCF6CFC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9DD96A2F-D7CD-4B6A-8C2D-6917AD62CE01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9DD96A2F-D7CD-4B6A-8C2D-6917AD62CE01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DD96A2F-D7CD-4B6A-8C2D-6917AD62CE01}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -30,6 +29,10 @@ Global
 		{F15E610F-4046-49D9-9B6D-5FCF8680E921}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F15E610F-4046-49D9-9B6D-5FCF8680E921}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F15E610F-4046-49D9-9B6D-5FCF8680E921}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C9527CF-E8E8-4F41-927F-D7735FCF6CFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C9527CF-E8E8-4F41-927F-D7735FCF6CFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C9527CF-E8E8-4F41-927F-D7735FCF6CFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C9527CF-E8E8-4F41-927F-D7735FCF6CFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
