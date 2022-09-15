@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompletadorDeTransferencias
 		{9DD96A2F-D7CD-4B6A-8C2D-6917AD62CE01} = {9DD96A2F-D7CD-4B6A-8C2D-6917AD62CE01}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "batchRunner", "batchRunner\batchRunner.csproj", "{7E65F1C0-864A-4AD4-957F-50AE0D963F24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3C9527CF-E8E8-4F41-927F-D7735FCF6CFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C9527CF-E8E8-4F41-927F-D7735FCF6CFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C9527CF-E8E8-4F41-927F-D7735FCF6CFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E65F1C0-864A-4AD4-957F-50AE0D963F24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E65F1C0-864A-4AD4-957F-50AE0D963F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E65F1C0-864A-4AD4-957F-50AE0D963F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E65F1C0-864A-4AD4-957F-50AE0D963F24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
