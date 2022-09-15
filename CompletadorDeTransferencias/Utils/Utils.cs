@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using BusinessModel.Modelos;
 using System.Net.Http;
 using Newtonsoft.Json;
+using System.Linq;
 
 namespace CompletadorDeTransferencias.Utils
 {
@@ -13,11 +14,28 @@ namespace CompletadorDeTransferencias.Utils
         public const int STATUS_OK = 0;
         public const int STATUS_ERR = 2;
 
-        public static (string, string) ParseArguments(string[] args)
+        public static (string , string) ParseArguments(string[] args)
         {
-            if (args.Length != 2)
-                throw new ArgumentException("Se requieren dos parametros.");
-            return (args[0], args[1]);
+            string outputFilePath = null;
+            string inputFilePath = null;
+            string listaParametros = "";
+            if (args.Length > 5 || args.Length < 1)
+                throw new ArgumentException("Cantidad de parametros incorrecta. --h para informacion sobre parametros");
+            if (args.Any("-h".Contains) || args.Any("--help".Contains))
+                Console.WriteLine(listaParametros);
+            else
+            {
+                if (args.Length != 4)
+                    throw new ArgumentException("Cantidad de parametros incorrecta. --h para informacion sobre parametros");
+                for(int i = 0;i<args.Length;i+=2)
+                {
+                    if ((Equals(args[i], "-i") || Equals(args[i], "--inputfilePath")) && inputFilePath == null)
+                        inputFilePath = args[i + 1];
+                    if ((Equals(args[i], "-o") || Equals(args[i], "--outputfilePath")) && outputFilePath==null)
+                        outputFilePath = args[i+1];
+                }
+            }
+            return (inputFilePath, outputFilePath);
         }
 
         public static void ValidarArchivos(string file1, string file2)
@@ -94,7 +112,7 @@ namespace CompletadorDeTransferencias.Utils
             linea += transferencia.Monto.ToString().PadLeft(10, '0');
             linea += transferencia.HoraFecha.ToString(@"yyyyMMddHHmmss");
             if(transferencia.Inmediata)
-                linea += 'T';//31,10,14,1,1,22,22,6,11
+                linea += 'T';
             else
                 linea += 'F';
             linea += transferencia.CBUOrigen;

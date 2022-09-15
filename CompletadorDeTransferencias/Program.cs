@@ -12,6 +12,8 @@ namespace CompletadorDeTransferencias
             try
             {
                 (string inputFilePath, string outputFilePath) = Utils.Utils.ParseArguments(args);
+                if (inputFilePath == null && outputFilePath == null)
+                    return Utils.Utils.STATUS_ERR;
                 Utils.Utils.ValidarArchivos(inputFilePath, outputFilePath);
                 List<Transferencia> transferencias = Utils.Utils.LeerTransferencias(inputFilePath);
                 transferencias = await Utils.Utils.CompletarTransferencias(transferencias);
@@ -23,8 +25,6 @@ namespace CompletadorDeTransferencias
                 Console.ReadKey();
                 return Utils.Utils.STATUS_ERR;
             }
-            Console.WriteLine("Ready");
-            Console.ReadKey();
             return Utils.Utils.STATUS_OK;
         }
     }
