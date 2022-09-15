@@ -7,7 +7,8 @@ namespace batchRunner
     {
         static void Main(string[] args)
         {
-                LaunchCommandLineApp();
+            LaunchCommandLineApp();
+            Console.ReadKey();
         }
         static void LaunchCommandLineApp()
         {
@@ -36,7 +37,6 @@ namespace batchRunner
             {
                 Console.WriteLine($"{ex} {ex?.InnerException} {ex.StackTrace}");
             }
-            Console.ReadKey();
         }
     }
 }
