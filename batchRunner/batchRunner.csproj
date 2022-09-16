@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{7E65F1C0-864A-4AD4-957F-50AE0D963F24}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>batchRunner</RootNamespace>
-    <AssemblyName>batchRunner</AssemblyName>
+    <RootNamespace>BatchRunner</RootNamespace>
+    <AssemblyName>BatchRunner</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
