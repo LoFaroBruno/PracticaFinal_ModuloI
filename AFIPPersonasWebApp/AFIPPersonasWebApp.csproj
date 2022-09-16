@@ -143,7 +143,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CodActividadsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\Personas1Controller.cs" />
+    <Compile Include="Controllers\api\Personas1Controller.cs" />
     <Compile Include="Controllers\PersonasController.cs" />
     <Compile Include="Data\AFIPPersonasWebAppContext.cs" />
     <Compile Include="Global.asax.cs">

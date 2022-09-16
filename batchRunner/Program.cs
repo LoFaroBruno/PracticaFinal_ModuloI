@@ -28,9 +28,13 @@ namespace batchRunner
                 {
                     exeProcess.WaitForExit();
                     if (exeProcess.ExitCode == 0)
-                        Console.WriteLine("The program executed successfully.");
+                    {
+                        Console.WriteLine("El programa ejecutó correctamente.");
+
+                        Console.WriteLine($"Fue creado el archivo de salida: {param2}");
+                    }
                     else
-                        Console.WriteLine($"The program exited with status: {exeProcess.ExitCode}");
+                        Console.WriteLine($"El programa terminó con el estado: {exeProcess.ExitCode}");
                 }
             }
             catch(Exception ex)
